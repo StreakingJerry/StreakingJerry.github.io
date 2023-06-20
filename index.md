@@ -17,7 +17,7 @@ Linux下这个文件在：
 ```
 /var/lib/docker/containers/[CONTAINER Id]/
 ```
-### 4.  修改`"PortBindings":{}`，例如以下添加两个端口映射，将container中的80、22端口分别映射至8080、2222：
+### 4.  修改`"PortBindings":{}`，例如以下添加两个端口映射，将container中的80、22端口分别映射至主机中的8080、2222：
 ```
 "PortBindings": {
     "80/tcp": [
