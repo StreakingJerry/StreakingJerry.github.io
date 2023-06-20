@@ -56,7 +56,7 @@ Linux下这个文件在：
             "-"
         ]
 ```
-修改后在`/home/vscode/`目录下添加`startup.sh`文件，将需要自动运行的命令写入即可。
+修改后在`/home/vscode/`目录下添加`startup.sh`文件，随后执行`chmod +x ./startup.sh`赋予可执行属性，将需要自动运行的命令写入该文件即可。
 ### 7.  重启docker服务：
 Windows中直接右键工具栏右下角docker desktop图标然后选restart。
 Linux中输入：
