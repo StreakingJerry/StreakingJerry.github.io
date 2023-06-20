@@ -17,7 +17,7 @@ Linux下这个文件在：
 ```
 /var/lib/docker/containers/[CONTAINER Id]/
 ```
-### 4.  修改`"PortBindings":{}`，例如以下添加两个端口映射，将container中的80、22端口分别映射至主机中的8080、2222：
+### 4.  修改`"PortBindings":{}`，例如添加两个端口映射，将container中的80、22端口分别映射至主机中的8080、2222：
 ```
 "PortBindings": {
     "80/tcp": [
@@ -34,7 +34,7 @@ Linux下这个文件在：
     ],
 }
 ```
-### 5.  将docker中的端口暴露出来，修改`config.v2.json`,在`"Config":`中添加：
+### 5.  将docker中的端口暴露出来，修改`config.v2.json`，在`"Config":`中添加：
 ```
 "ExposedPorts": {
     "80/tcp":{},
@@ -56,9 +56,16 @@ Linux下这个文件在：
             "-"
         ]
 ```
-修改后在`/home/vscode/`目录下添加`startup.sh`文件，随后执行`chmod +x ./startup.sh`赋予可执行属性，将需要自动运行的命令写入该文件即可。
+全部操作完成后在container中创建脚本文件并赋予可执行属性（该文件会在container启动时被root运行）；
+```
+touch /home/vscode/startup.sh
+chmod +x /home/vscode/startup.sh
+```
+在文件首行添加`#!/bin/bash`后将需要container启动时自动运行的命令写入即可。
+
 ### 7.  重启docker服务：
 Windows中直接右键工具栏右下角docker desktop图标然后选restart。
+
 Linux中输入：
 ```
 service docker restart
