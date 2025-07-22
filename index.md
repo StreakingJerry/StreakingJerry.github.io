@@ -11,7 +11,7 @@ sudo docker stop [CONTAINER NAME or ID]
 ### 3.  去到container文件夹，找到`hostconfig.json`：
 Windows下这个文件在：
 ```
-\\wsl.localhost\docker-desktop-data\data\docker\containers\[CONTAINER Id]\
+\\wsl.localhost\docker-desktop\mnt\docker-desktop-disk\data\docker\containers\[CONTAINER Id]\
 ```
 Linux下这个文件在：
 ```
